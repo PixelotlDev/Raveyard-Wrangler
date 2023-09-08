@@ -6,7 +6,7 @@
             "id": "e4f1e1ce-1428-4146-8c30-b8302bae929c",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "move",
                     "type": "Value",
                     "id": "c7e920e0-9d04-4825-8117-3ce006e64c73",
                     "expectedControlType": "Vector2",
@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Attack",
+                    "name": "attack",
                     "type": "Button",
                     "id": "aa5ae083-3464-49e4-918c-9809f335e742",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dodge",
+                    "name": "dodge",
                     "type": "Button",
                     "id": "50d08a91-0299-41ca-bba2-d98107e0ccec",
                     "expectedControlType": "Button",
@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Focus",
+                    "name": "focus",
                     "type": "Button",
                     "id": "f7a416b1-80a6-4eb3-869d-2cc561173986",
                     "expectedControlType": "Button",
@@ -50,7 +50,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -61,7 +61,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -72,7 +72,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -83,7 +83,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -94,7 +94,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -105,7 +105,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -116,7 +116,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -127,7 +127,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -138,7 +138,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -149,7 +149,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -160,7 +160,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dodge",
+                    "action": "dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -171,7 +171,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dodge",
+                    "action": "dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -182,7 +182,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dodge",
+                    "action": "dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -193,7 +193,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dodge",
+                    "action": "dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -204,7 +204,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dodge",
+                    "action": "dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -215,7 +215,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Focus",
+                    "action": "focus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -226,7 +226,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Focus",
+                    "action": "focus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -235,30 +235,8 @@
         {
             "name": "UI",
             "id": "01fd49b1-90aa-48bb-92dd-3067bda2bf44",
-            "actions": [
-                {
-                    "name": "Navigate",
-                    "type": "Value",
-                    "id": "6edf919e-e6b7-447f-9480-6210a7db25f9",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "d3d535d5-279e-44a7-aba0-938f607d4f93",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Navigate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": []

@@ -28,7 +28,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
             ""id"": ""e4f1e1ce-1428-4146-8c30-b8302bae929c"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""move"",
                     ""type"": ""Value"",
                     ""id"": ""c7e920e0-9d04-4825-8117-3ce006e64c73"",
                     ""expectedControlType"": ""Vector2"",
@@ -37,7 +37,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""attack"",
                     ""type"": ""Button"",
                     ""id"": ""aa5ae083-3464-49e4-918c-9809f335e742"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Dodge"",
+                    ""name"": ""dodge"",
                     ""type"": ""Button"",
                     ""id"": ""50d08a91-0299-41ca-bba2-d98107e0ccec"",
                     ""expectedControlType"": ""Button"",
@@ -55,7 +55,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Focus"",
+                    ""name"": ""focus"",
                     ""type"": ""Button"",
                     ""id"": ""f7a416b1-80a6-4eb3-869d-2cc561173986"",
                     ""expectedControlType"": ""Button"",
@@ -72,7 +72,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -83,7 +83,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -94,7 +94,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -105,7 +105,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -116,7 +116,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -127,7 +127,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -138,7 +138,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -149,7 +149,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -160,7 +160,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -171,7 +171,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -182,7 +182,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dodge"",
+                    ""action"": ""dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -193,7 +193,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dodge"",
+                    ""action"": ""dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -204,7 +204,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dodge"",
+                    ""action"": ""dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -215,7 +215,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dodge"",
+                    ""action"": ""dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -226,7 +226,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dodge"",
+                    ""action"": ""dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -237,7 +237,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Focus"",
+                    ""action"": ""focus"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -248,7 +248,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Focus"",
+                    ""action"": ""focus"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -257,43 +257,20 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         {
             ""name"": ""UI"",
             ""id"": ""01fd49b1-90aa-48bb-92dd-3067bda2bf44"",
-            ""actions"": [
-                {
-                    ""name"": ""Navigate"",
-                    ""type"": ""Value"",
-                    ""id"": ""6edf919e-e6b7-447f-9480-6210a7db25f9"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""d3d535d5-279e-44a7-aba0-938f607d4f93"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
+            ""actions"": [],
+            ""bindings"": []
         }
     ],
     ""controlSchemes"": []
 }");
         // gameplay
         m_gameplay = asset.FindActionMap("gameplay", throwIfNotFound: true);
-        m_gameplay_Move = m_gameplay.FindAction("Move", throwIfNotFound: true);
-        m_gameplay_Attack = m_gameplay.FindAction("Attack", throwIfNotFound: true);
-        m_gameplay_Dodge = m_gameplay.FindAction("Dodge", throwIfNotFound: true);
-        m_gameplay_Focus = m_gameplay.FindAction("Focus", throwIfNotFound: true);
+        m_gameplay_move = m_gameplay.FindAction("move", throwIfNotFound: true);
+        m_gameplay_attack = m_gameplay.FindAction("attack", throwIfNotFound: true);
+        m_gameplay_dodge = m_gameplay.FindAction("dodge", throwIfNotFound: true);
+        m_gameplay_focus = m_gameplay.FindAction("focus", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -353,18 +330,18 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     // gameplay
     private readonly InputActionMap m_gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
-    private readonly InputAction m_gameplay_Move;
-    private readonly InputAction m_gameplay_Attack;
-    private readonly InputAction m_gameplay_Dodge;
-    private readonly InputAction m_gameplay_Focus;
+    private readonly InputAction m_gameplay_move;
+    private readonly InputAction m_gameplay_attack;
+    private readonly InputAction m_gameplay_dodge;
+    private readonly InputAction m_gameplay_focus;
     public struct GameplayActions
     {
         private @PlayerActions m_Wrapper;
         public GameplayActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_gameplay_Move;
-        public InputAction @Attack => m_Wrapper.m_gameplay_Attack;
-        public InputAction @Dodge => m_Wrapper.m_gameplay_Dodge;
-        public InputAction @Focus => m_Wrapper.m_gameplay_Focus;
+        public InputAction @move => m_Wrapper.m_gameplay_move;
+        public InputAction @attack => m_Wrapper.m_gameplay_attack;
+        public InputAction @dodge => m_Wrapper.m_gameplay_dodge;
+        public InputAction @focus => m_Wrapper.m_gameplay_focus;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -374,34 +351,34 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_GameplayActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Attack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
-                @Attack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
-                @Attack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
-                @Dodge.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDodge;
-                @Dodge.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDodge;
-                @Dodge.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDodge;
-                @Focus.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
-                @Focus.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
-                @Focus.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
+                @move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
+                @move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
+                @move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
+                @attack.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @attack.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @attack.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAttack;
+                @dodge.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDodge;
+                @dodge.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDodge;
+                @dodge.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDodge;
+                @focus.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
+                @focus.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
+                @focus.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Move.started += instance.OnMove;
-                @Move.performed += instance.OnMove;
-                @Move.canceled += instance.OnMove;
-                @Attack.started += instance.OnAttack;
-                @Attack.performed += instance.OnAttack;
-                @Attack.canceled += instance.OnAttack;
-                @Dodge.started += instance.OnDodge;
-                @Dodge.performed += instance.OnDodge;
-                @Dodge.canceled += instance.OnDodge;
-                @Focus.started += instance.OnFocus;
-                @Focus.performed += instance.OnFocus;
-                @Focus.canceled += instance.OnFocus;
+                @move.started += instance.OnMove;
+                @move.performed += instance.OnMove;
+                @move.canceled += instance.OnMove;
+                @attack.started += instance.OnAttack;
+                @attack.performed += instance.OnAttack;
+                @attack.canceled += instance.OnAttack;
+                @dodge.started += instance.OnDodge;
+                @dodge.performed += instance.OnDodge;
+                @dodge.canceled += instance.OnDodge;
+                @focus.started += instance.OnFocus;
+                @focus.performed += instance.OnFocus;
+                @focus.canceled += instance.OnFocus;
             }
         }
     }
@@ -410,12 +387,10 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     // UI
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
-    private readonly InputAction m_UI_Navigate;
     public struct UIActions
     {
         private @PlayerActions m_Wrapper;
         public UIActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -425,16 +400,10 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_UIActionsCallbackInterface != null)
             {
-                @Navigate.started -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
-                @Navigate.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
-                @Navigate.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Navigate.started += instance.OnNavigate;
-                @Navigate.performed += instance.OnNavigate;
-                @Navigate.canceled += instance.OnNavigate;
             }
         }
     }
@@ -448,6 +417,5 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     }
     public interface IUIActions
     {
-        void OnNavigate(InputAction.CallbackContext context);
     }
 }
