@@ -6,6 +6,9 @@ using UnityEngine.InputSystem.Processors;
 
 public class MovementController : MonoBehaviour
 {
+    [SerializeField]
+    CharacterController controller;
+
     Vector2 _velocity;
     public Vector2 Velocity
     { 
@@ -57,8 +60,10 @@ public class MovementController : MonoBehaviour
         _velocity.y = Mathf.Clamp(_velocity.y, -maxVelocity, maxVelocity);
 
         // Apply Velocity
-        Vector3 VelocityVec3 = new Vector3(_velocity.x, 0, _velocity.y);
-        transform.position += (VelocityVec3 / 10) * Time.fixedDeltaTime;
+        // We apply _velocity.y vertically as well so that our movement lines up with the weird layout we have going on
+        Vector3 VelocityVec3 = new Vector3(_velocity.x, _velocity.y, _velocity.y);
+        //transform.position += (VelocityVec3 / 10) * Time.fixedDeltaTime;
+        controller.Move((VelocityVec3 / 10) * Time.fixedDeltaTime);
 
         // Cleanup
         doFrictionX = true;

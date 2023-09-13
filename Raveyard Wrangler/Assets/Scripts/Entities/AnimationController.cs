@@ -26,33 +26,29 @@ public class AnimationController : MonoBehaviour
     {
         Vector2 movementVect = actions.gameplay.move.ReadValue<Vector2>();
 
-        // Set the 'Facing' parameter if we aren't moving diagonally
-        // Otherwise, just leave it as what it was
-        if (movementVect.y == 0 || movementVect.x == 0)
+        // Set the 'Facing' parameter
+        if (movementVect.x > 0)
         {
-            if (movementVect.x > 0)
-            {
-                directionFacing = 1; // right
-                flipped = movementVect.x < 0;
-            }
-            else if (movementVect.x < 0)
-            {
-                directionFacing = 2; // left
-                flipped = movementVect.x < 0;
-            }
-            else if (movementVect.y < 0)
-            {
-                directionFacing = 0; // up
-                flipped = false;
-            }
-            else if (movementVect.y > 0)
-            {
-                directionFacing = 3; // down
-                flipped = false;
-            }
-
-            animator.SetInteger("Facing", directionFacing);
+            directionFacing = 1; // right
+            flipped = movementVect.x < 0;
         }
+        else if (movementVect.x < 0)
+        {
+            directionFacing = 2; // left
+            flipped = movementVect.x < 0;
+        }
+        else if (movementVect.y < 0)
+        {
+            directionFacing = 0; // up
+            flipped = false;
+        }
+        else if (movementVect.y > 0)
+        {
+            directionFacing = 3; // down
+            flipped = false;
+        }
+
+        animator.SetInteger("Facing", directionFacing);
 
         // Set the 'Walking' parameter
         if (movementVect != Vector2.zero)
