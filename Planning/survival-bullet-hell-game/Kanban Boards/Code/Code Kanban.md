@@ -21,7 +21,8 @@ kanban-plugin: basic
 
 **Complete**
 - [x] - [x] **Set up a Unity project**<br><br>Completed: @{2023-09-07}
-- [x] **Create a movement controller**<br><br> - Velocity handling<br>	 - [x] Velocity<br>	 - [x] Max velocity<br>	 - [x] Friction
+- [x] **Create a movement controller**<br><br> - Velocity handling<br>	 - [x] Velocity<br>	 - [x] Max velocity<br>	 - [x] Friction<br><br>Completed: @{2023-09-08}
+- [x] **Create an animation controller**<br><br> - [x] Walking<br> - [x] Directionality<br><br>Completed: @{2023-09-13}
 
 
 

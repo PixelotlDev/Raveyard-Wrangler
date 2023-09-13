@@ -6,21 +6,32 @@ using UnityEngine.InputSystem.Processors;
 
 public class MovementController : MonoBehaviour
 {
-    Vector2 velocity;
+    Vector2 _velocity;
+    public Vector2 Velocity
+    { 
+        get 
+        {
+            return _velocity;
+        }
+        private set
+        {
+            _velocity = value;
+        }
+    }
 
     [SerializeField]
-    float maxVelocity = 100;
+    float maxVelocity = 80;
     [SerializeField]
-    float friction = 5;
+    float friction = 7.5f;
     [SerializeField]
-    float speedMod = 10;
+    float speedMod = 4;
 
     bool doFrictionX;
     bool doFrictionY;
 
     void Awake()
     {
-        velocity = Vector2.zero;
+        _velocity = Vector2.zero;
 
         doFrictionX = true;
         doFrictionY = true;
@@ -28,26 +39,26 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Apply friction so long as we aren't trying to move
+        // Apply Friction so long as we aren't trying to move
         if (doFrictionX)
         {
-            if (velocity.x > 0) { velocity.x -= (velocity.x < friction ? velocity.x : friction); }
-            if (velocity.x < 0) { velocity.x += (-velocity.x < friction ? -velocity.x : friction); }
+            if (_velocity.x > 0) { _velocity.x -= (_velocity.x < friction ? _velocity.x : friction); }
+            if (_velocity.x < 0) { _velocity.x += (-_velocity.x < friction ? -_velocity.x : friction); }
         }
         if (doFrictionY)
         {
-            if (velocity.y > 0) { velocity.y -= (velocity.y < friction ? velocity.y : friction); }
-            if (velocity.y < 0) { velocity.y += (-velocity.y < friction ? -velocity.y : friction); }
+            if (_velocity.y > 0) { _velocity.y -= (_velocity.y < friction ? _velocity.y : friction); }
+            if (_velocity.y < 0) { _velocity.y += (-_velocity.y < friction ? -_velocity.y : friction); }
         }
 
 
-        // Apply velocity cap
-        velocity.x = Mathf.Clamp(velocity.x, -maxVelocity, maxVelocity);
-        velocity.y = Mathf.Clamp(velocity.y, -maxVelocity, maxVelocity);
+        // Apply Velocity cap
+        _velocity.x = Mathf.Clamp(_velocity.x, -maxVelocity, maxVelocity);
+        _velocity.y = Mathf.Clamp(_velocity.y, -maxVelocity, maxVelocity);
 
-        // Apply velocity
-        Vector3 velocityVec3 = new Vector3(velocity.x, 0, velocity.y);
-        transform.position += (velocityVec3 / 10) * Time.fixedDeltaTime;
+        // Apply Velocity
+        Vector3 VelocityVec3 = new Vector3(_velocity.x, 0, _velocity.y);
+        transform.position += (VelocityVec3 / 10) * Time.fixedDeltaTime;
 
         // Cleanup
         doFrictionX = true;
@@ -57,10 +68,10 @@ public class MovementController : MonoBehaviour
     // Move by some set amount in a normalised direction
     public void Move(Vector2 direction)
     {
-        // If our force is opposite our current velocity, apply friction. Otherwise, do not.
-        doFrictionX = (direction.x <= 0 && velocity.x > 0) || (direction.x >= 0 && velocity.x < 0);
-        doFrictionY = (direction.y <= 0 && velocity.y > 0) || (direction.y >= 0 && velocity.y < 0);
+        // If our force is opposite our current Velocity, apply Friction. Otherwise, do not.
+        doFrictionX = (direction.x <= 0 && _velocity.x > 0) || (direction.x >= 0 && _velocity.x < 0);
+        doFrictionY = (direction.y <= 0 && _velocity.y > 0) || (direction.y >= 0 && _velocity.y < 0);
 
-        velocity += direction.normalized * speedMod;
+        _velocity += direction.normalized * speedMod;
     }
 }

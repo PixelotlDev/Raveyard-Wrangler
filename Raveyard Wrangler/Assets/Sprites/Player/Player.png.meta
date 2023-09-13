@@ -157,7 +157,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 9
@@ -178,7 +178,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 9
@@ -199,7 +199,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 48
         width: 16
         height: 16
       alignment: 9
@@ -216,11 +216,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side_Idle
+      name: Right_Idle
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 9
@@ -237,11 +237,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side_Walk_1
+      name: Right_Walk_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 9
@@ -258,11 +258,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Side_Walk_2
+      name: Right_Walk_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 9
@@ -341,6 +341,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Left_Idle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb85e3ad363c7bb48ac35889592fcc99
+      internalID: -700879135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180bd020fcd66c342888e32ef4642a7a
+      internalID: 1219706679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Left_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25e9d775d042c348b363d904af79531
+      internalID: -2109548493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -352,15 +415,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Side_Walk_2: -43502306
+      Left_Walk_1: 1219706679
       Back_Walk_2: 1418429876
+      Right_Walk_2: -43502306
+      Left_Idle: -700879135
       Front_Idle: -749386759
+      Left_Walk_2: -2109548493
       Front_Walk_2: -201632779
       Back_Walk_1: 2138980369
       Back_Idle: -2060016331
+      Right_Idle: 983859209
       Front_Walk_1: -2003554075
-      Side_Walk_1: -1701074035
-      Side_Idle: 983859209
+      Right_Walk_1: -1701074035
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
