@@ -13,7 +13,7 @@
             "state": {
               "type": "kanban",
               "state": {
-                "file": "Kanban Boards/Code/Code Kanban.md"
+                "file": "Kanban Boards/Art/Art Kanban.md"
               }
             }
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kanban Boards/Code/Code Kanban.md",
+                "file": "Kanban Boards/Art/Art Kanban.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kanban Boards/Code/Code Kanban.md",
+                "file": "Kanban Boards/Art/Art Kanban.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kanban Boards/Code/Code Kanban.md"
+                "file": "Kanban Boards/Art/Art Kanban.md"
               }
             }
           }
@@ -148,33 +148,37 @@
   },
   "active": "acdc69061ade1b99",
   "lastOpenFiles": [
+    "Kanban Boards/Design/Design Kanban.md",
+    "PDF Format.md",
+    "Wiki/Weapons/! Weapons.md",
+    "Wiki/Buffs/! Buffs.md",
+    "Kanban Boards/Art/Art Kanban.md",
+    "Wiki/Weapons/Ranged/Ecto-no-more.md",
+    "Kanban Boards/Code/Code Kanban.md",
+    "Assets/Player/Player.png",
+    "Assets/Weapons/Ranged/Ecto-no-more/Ecto-no-more.aseprite",
+    "Assets/Weapons/Ranged/Ecto-no-more/Ecto-no-more Icon.aseprite",
+    "Assets/Weapons/Ranged/Ecto-no-more",
+    "Assets/Weapons/Ranged/New folder",
+    "Assets/Weapons/Ranged/Ecto Cannon/Ecto Cannon Icon.aseprite",
+    "Assets/Weapons/Ranged/Ecto Blaster.aseprite",
+    "Assets/Weapons/Ranged/Ecto Cannon/Ecto Cannon.aseprite",
+    "Assets/Weapons/Ranged/Ecto Cannon",
+    "Assets/Weapons/Ranged/Ecto Burster/Ecto Burster Icon.aseprite",
+    "Assets/Weapons/Ranged/Ecto Burster/Ecto Burster.aseprite",
+    "Wiki/Weapons/Ranged/Ecto Blaster.md",
+    "Assets/Weapons/Melee/Shovel/Shovel.png",
     "Project Dependencies.md",
-    "Assets/Cursor16_circle.aseprite",
-    "Assets/Cursor16_alt.aseprite",
-    "Assets/Cursor16_circle.ase",
-    "Assets/Cursor16_alt.ase",
     "Assets/Cursor16_circle.png",
     "Assets/Cursor16_alt.png",
     "Assets/Cursor16.png",
-    "Assets/Cursor16.aseprite",
     "Assets/Player/GameIcon.png",
     "Assets/Cursor.png",
-    "Assets/Cursor.aseprite",
     "Raveyard Wrangler.md",
-    "PDF Format.md",
-    "Kanban Boards/Code/Code Kanban.md",
-    "Assets/Player/Player.png",
-    "Kanban Boards/Art/Art Kanban.md",
     "Wiki/Structures/Natural/Bush.md",
     "Wiki/Structures/Natural/Gravestones.md",
     "Wiki/Structures/Natural/Rock.md",
     "Wiki/Structures/! Structures.md",
-    "Assets/Structures/Bush.aseprite",
-    "Assets/Structures/Rock.aseprite",
-    "Assets/Structures/B.aseprite",
-    "Assets/Structures/Tree.aseprite",
-    "Kanban Boards/Design/Design Kanban.md",
-    "Wiki/Buffs/! Buffs.md",
     "Wiki/Enemies/Ranged/Rocket launcher.md",
     "Excalidraw/Shop_UI.excalidraw.md",
     "Wiki/Weapons/Ranged/Ecto Cannon.md",
@@ -187,8 +191,6 @@
     "Wiki/UI/Pause Menu UI.md",
     "Wiki/UI/Generic UI.md",
     "Wiki/UI/Shop UI.md",
-    "Wiki/UI/Virtual buttons.md",
-    "Wiki/Controls/Controller controls.md",
     "Assignment stuff/Screenshots/Kanban/Design Kanban 1.png"
   ]
 }

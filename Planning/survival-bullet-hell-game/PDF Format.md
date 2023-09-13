@@ -82,10 +82,6 @@
 
 ---
 
-![[Ecto-no-more]]
-
----
-
 ![[! Structures]]
 
 ---

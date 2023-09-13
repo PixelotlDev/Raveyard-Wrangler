@@ -22,9 +22,6 @@
 		- Ecto Cannon buffs
 			- Ecto bomb (bullet explodes on contact)
 			- Dampeners (less recoil)
-		- Ecto-no-more buffs
-			- Pressurised (firing causes enemies nearby to be pushed back)
-			- Toxic fumes (enemies moving through the clouds will be poisoned)
 
  - General player buffs
 	 - Movement buffs
