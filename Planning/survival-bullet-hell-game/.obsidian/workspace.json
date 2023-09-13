@@ -11,9 +11,11 @@
             "id": "acdc69061ade1b99",
             "type": "leaf",
             "state": {
-              "type": "kanban",
+              "type": "markdown",
               "state": {
-                "file": "Kanban Boards/Art/Art Kanban.md"
+                "file": "Wiki/Weapons/Ranged/Ecto-no-more.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kanban Boards/Art/Art Kanban.md",
+                "file": "Wiki/Weapons/Ranged/Ecto-no-more.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kanban Boards/Art/Art Kanban.md",
+                "file": "Wiki/Weapons/Ranged/Ecto-no-more.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kanban Boards/Art/Art Kanban.md"
+                "file": "Wiki/Weapons/Ranged/Ecto-no-more.md"
               }
             }
           }
@@ -148,11 +150,13 @@
   },
   "active": "acdc69061ade1b99",
   "lastOpenFiles": [
+    "Wiki/Weapons/Ranged/Ecto-no-more.md.rej",
+    "Kanban Boards/Art/Art Kanban.md",
+    "Wiki/Weapons/Ranged/Ecto-no-more.md",
     "Kanban Boards/Design/Design Kanban.md",
     "PDF Format.md",
     "Wiki/Weapons/! Weapons.md",
     "Wiki/Buffs/! Buffs.md",
-    "Kanban Boards/Art/Art Kanban.md",
     "Wiki/Weapons/Ranged/Ecto-no-more.md",
     "Kanban Boards/Code/Code Kanban.md",
     "Assets/Player/Player.png",
@@ -189,8 +193,6 @@
     "Excalidraw/Generic_UI.excalidraw.md",
     "Excalidraw/Virtual_controls.excalidraw.md",
     "Wiki/UI/Pause Menu UI.md",
-    "Wiki/UI/Generic UI.md",
-    "Wiki/UI/Shop UI.md",
     "Assignment stuff/Screenshots/Kanban/Design Kanban 1.png"
   ]
 }

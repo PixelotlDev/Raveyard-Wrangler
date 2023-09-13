@@ -11,3 +11,4 @@ Upgrades:
 [[Ecto Blaster]] - A scuffed up gun you found in an antiques shop. You thought it would be funny to have, given your profession.
  - [[Ecto Cannon]] - This big guy is a veritable hand cannon! Blast ghosts into next wednesday!
  - [[Ecto Burster]] - A strange contraption, this... thing spurts out bullets in bursts.
+ - [[Ecto-no-more]] - Got ghosts on your toast? Whip out the Ecto-no-more! Banishes 99.9% of all ephemeral matter!
