@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "4f4c3632af38f989",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "Kanban Boards/Code/Code Kanban.md"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Wiki/Weapons/Ranged/Ecto-no-more.md",
+                "file": "Kanban Boards/Code/Code Kanban.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Wiki/Weapons/Ranged/Ecto-no-more.md",
+                "file": "Kanban Boards/Code/Code Kanban.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +136,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Wiki/Weapons/Ranged/Ecto-no-more.md"
+                "file": "Kanban Boards/Code/Code Kanban.md"
+              }
+            }
+          },
+          {
+            "id": "1368db2b5e24bf94",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
               }
             }
           }
@@ -148,17 +169,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "acdc69061ade1b99",
+  "active": "4f4c3632af38f989",
   "lastOpenFiles": [
-    "Wiki/Weapons/Ranged/Ecto-no-more.md.rej",
     "Kanban Boards/Art/Art Kanban.md",
+    "Kanban Boards/Code/Code Kanban.md",
+    "Assets/Terrain/Grass.png",
+    "Assets/Terrain/Grass.aseprite",
+    "Assets/Terrain",
+    "Assets/New folder",
+    "Assets/Structures/Tree.png",
+    "Wiki/Weapons/Ranged/Ecto-no-more.md.rej",
     "Wiki/Weapons/Ranged/Ecto-no-more.md",
     "Kanban Boards/Design/Design Kanban.md",
     "PDF Format.md",
     "Wiki/Weapons/! Weapons.md",
     "Wiki/Buffs/! Buffs.md",
     "Wiki/Weapons/Ranged/Ecto-no-more.md",
-    "Kanban Boards/Code/Code Kanban.md",
     "Assets/Player/Player.png",
     "Assets/Weapons/Ranged/Ecto-no-more/Ecto-no-more.aseprite",
     "Assets/Weapons/Ranged/Ecto-no-more/Ecto-no-more Icon.aseprite",
@@ -166,10 +192,6 @@
     "Assets/Weapons/Ranged/New folder",
     "Assets/Weapons/Ranged/Ecto Cannon/Ecto Cannon Icon.aseprite",
     "Assets/Weapons/Ranged/Ecto Blaster.aseprite",
-    "Assets/Weapons/Ranged/Ecto Cannon/Ecto Cannon.aseprite",
-    "Assets/Weapons/Ranged/Ecto Cannon",
-    "Assets/Weapons/Ranged/Ecto Burster/Ecto Burster Icon.aseprite",
-    "Assets/Weapons/Ranged/Ecto Burster/Ecto Burster.aseprite",
     "Wiki/Weapons/Ranged/Ecto Blaster.md",
     "Assets/Weapons/Melee/Shovel/Shovel.png",
     "Project Dependencies.md",

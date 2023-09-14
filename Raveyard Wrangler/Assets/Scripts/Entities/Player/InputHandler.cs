@@ -9,19 +9,17 @@ public class InputHandler : MonoBehaviour
     [SerializeField]
     MovementController playerController;
 
-    // Start is called before the first frame update
     void Awake()
     {
         actions = new PlayerActions();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 movementVect = actions.gameplay.move.ReadValue<Vector2>();
         if (movementVect != Vector2.zero)
         {
-            playerController.Move(movementVect);
+            playerController.AddVelocity(movementVect);
         }
     }
 

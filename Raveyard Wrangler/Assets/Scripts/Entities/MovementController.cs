@@ -62,8 +62,8 @@ public class MovementController : MonoBehaviour
         // Apply Velocity
         // We apply _velocity.y vertically as well so that our movement lines up with the weird layout we have going on
         Vector3 VelocityVec3 = new Vector3(_velocity.x, _velocity.y, _velocity.y);
-        //transform.position += (VelocityVec3 / 10) * Time.fixedDeltaTime;
-        controller.Move((VelocityVec3 / 10) * Time.fixedDeltaTime);
+        transform.position += (VelocityVec3 / 10) * Time.fixedDeltaTime;
+
 
         // Cleanup
         doFrictionX = true;
@@ -71,7 +71,7 @@ public class MovementController : MonoBehaviour
     }
 
     // Move by some set amount in a normalised direction
-    public void Move(Vector2 direction)
+    public void AddVelocity(Vector2 direction)
     {
         // If our force is opposite our current Velocity, apply Friction. Otherwise, do not.
         doFrictionX = (direction.x <= 0 && _velocity.x > 0) || (direction.x >= 0 && _velocity.x < 0);

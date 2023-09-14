@@ -7,7 +7,6 @@ kanban-plugin: basic
 ## Planned
 
 - [ ] **Make boss assets**<br><br> - [ ] Boss bar<br><br> - The Spookball Champion<br>	 - [ ] Sprite<br>	 - [ ] Ball sprites<br><br> - The Technoplasm Terror<br>	 - [ ] Sprite<br>	 - [ ] Custom bullets<br><br> - The Phantom Prankster<br>	 - [ ] Sprite<br>	 - [ ] Custom bullets<br>	 - [ ] Flash
-- [ ] **Make level tiles**<br><br> - [ ] Grass<br> - [ ] Dirt<br> - [ ] Grave soil<br> - [ ] Stone path<br> - [ ] Fence
 - [ ] **Make weapon assets**<br><br> - Melee:<br>	 - [ ] Shovel<br>	 - [ ] Haunted Shovel<br>	 - [ ] Twin Trowels<br><br> - Ranged:<br>	 - [ ] Ecto Blaster<br>	 - [ ] Ecto Burster<br>	 - [ ] Ecto Cannon<br>	 - [ ] Ecto-no-more
 - [ ] **Make menu assets**<br><br> - [ ] Buttons<br> - [ ] Main title<br> - [ ] Options title<br> - [ ] Sliders<br> - [ ] Text box<br> - [ ] Pause button<br> - [ ] Quit button
 - [ ] **Make UI assets**<br><br> - [ ] Health icon<br> - [ ] Ammo icon<br> - [ ] Boss bar<br> - [ ] Currency icon<br> - [ ] Timeline assets<br> - [ ] Virtual buttons + joystick
@@ -19,6 +18,7 @@ kanban-plugin: basic
 
 ## In Progress
 
+- [ ] **Make level tiles**<br><br> - [x] Grass<br> - [ ] Dirt<br> - [ ] Grave soil<br> - [ ] Stone path<br> - [ ] Fence
 
 
 ## Complete

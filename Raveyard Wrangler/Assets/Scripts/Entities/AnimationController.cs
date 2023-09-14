@@ -15,13 +15,11 @@ public class AnimationController : MonoBehaviour
 
     bool flipped;
 
-    // Start is called before the first frame update
     void Awake()
     {
         actions = new PlayerActions();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 movementVect = actions.gameplay.move.ReadValue<Vector2>();
