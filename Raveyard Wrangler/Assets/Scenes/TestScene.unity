@@ -223,6 +223,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1521543169}
   drawPoint: {fileID: 1028527165}
+  playerController: {fileID: 1521543174}
+  offset: {x: 0, y: 0, z: -8}
+  cameraSize: 10
+  reduceMotion: 0
 --- !u!1 &1028527164
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +263,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3254542310901163505, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
   m_PrefabInstance: {fileID: 3254542312064077296}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1521543174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3254542310901164558, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
+  m_PrefabInstance: {fileID: 3254542312064077296}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecf9bb3c70357ca47a10cd96436d8d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2016398212
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,18 +388,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3254542310901163505, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3254542310901163505, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.757
-      objectReference: {fileID: 0}
-    - target: {fileID: 3254542310901163505, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.757
-      objectReference: {fileID: 0}
-    - target: {fileID: 3254542310901163505, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -45
       objectReference: {fileID: 0}
@@ -401,8 +404,24 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3254542310901164558, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
-      propertyPath: controller
-      value: 
+      propertyPath: speedMod
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507883002838045988, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
+      propertyPath: m_Height
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507883002838045988, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507883002838045988, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
+      propertyPath: m_Center.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037488671478309065, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.011
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5123330fd6304b4f8356311319fc74c, type: 3}

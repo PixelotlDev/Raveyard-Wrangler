@@ -6,13 +6,15 @@ using UnityEngine.InputSystem.Processors;
 
 public class MovementController : MonoBehaviour
 {
+    // UNITY CLASSES
     [SerializeField]
     CharacterController controller;
 
+    // VECTORS
     Vector2 _velocity;
     public Vector2 Velocity
-    { 
-        get 
+    {
+        get
         {
             return _velocity;
         }
@@ -22,13 +24,28 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    // FLOATS
     [SerializeField]
-    float maxVelocity = 80;
+    float maxVelocity;
     [SerializeField]
-    float friction = 7.5f;
+    float baseFriction;
     [SerializeField]
-    float speedMod = 4;
+    float velocityMod;
+    [SerializeField]
+    float _speedMod;
+    public float SpeedMod
+    {
+        get
+        {
+            return _speedMod;
+        }
+        private set
+        {
+            _speedMod = value;
+        }
+    }
 
+    // BOOLS
     bool doFrictionX;
     bool doFrictionY;
 
@@ -42,6 +59,9 @@ public class MovementController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // We multiply this by 10 to make the numbers look nicer in the editor. Probably not best practice
+        float friction = (baseFriction * 10) * Time.deltaTime;
+
         // Apply Friction so long as we aren't trying to move
         if (doFrictionX)
         {
@@ -62,7 +82,8 @@ public class MovementController : MonoBehaviour
         // Apply Velocity
         // We apply _velocity.y vertically as well so that our movement lines up with the weird layout we have going on
         Vector3 VelocityVec3 = new Vector3(_velocity.x, _velocity.y, _velocity.y);
-        transform.position += (VelocityVec3 / 10) * Time.fixedDeltaTime;
+        // We divide VelocityVec3 by 50 to make the numbers look nicer in the editor. Probably not best practice
+        controller.Move(VelocityVec3 * _speedMod / 50);
 
 
         // Cleanup
@@ -77,6 +98,7 @@ public class MovementController : MonoBehaviour
         doFrictionX = (direction.x <= 0 && _velocity.x > 0) || (direction.x >= 0 && _velocity.x < 0);
         doFrictionY = (direction.y <= 0 && _velocity.y > 0) || (direction.y >= 0 && _velocity.y < 0);
 
-        _velocity += direction.normalized * speedMod;
+        // We multiply speedMod by 10 to make the numbers look nicer in the editor. Probably not best practice
+        _velocity += direction.normalized * (velocityMod * 10) * Time.deltaTime;
     }
 }

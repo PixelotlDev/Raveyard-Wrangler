@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3254542310901164559}
   - component: {fileID: 7483950214154453493}
   - component: {fileID: 9037488671478309065}
+  - component: {fileID: 5507883002838045988}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3254542310901164553}
   m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.757, z: -0.757}
   m_LocalScale: {x: 1, y: 1.4142, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48,10 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf9bb3c70357ca47a10cd96436d8d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  maxVelocity: 80
-  friction: 7
-  speedMod: 5
+  controller: {fileID: 5507883002838045988}
+  maxVelocity: 9
+  baseFriction: 4
+  velocityMod: 10
+  _speedMod: 1
 --- !u!114 &3254542310901164559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +93,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.25}
   m_Center: {x: 0, y: -0.25, z: 0}
+--- !u!143 &5507883002838045988
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3254542310901164553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3254542312411941175
 GameObject:
   m_ObjectHideFlags: 0
