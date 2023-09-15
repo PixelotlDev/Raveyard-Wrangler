@@ -1,14 +1,16 @@
+using Palmmedia.ReportGenerator.Core.CodeAnalysis;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
+using UnityEngine.UIElements;
 
 public class MovementController : MonoBehaviour
 {
     // UNITY CLASSES
     [SerializeField]
-    CharacterController controller;
+    BoxCollider bCollider;
 
     // VECTORS
     Vector2 _velocity;
@@ -81,14 +83,24 @@ public class MovementController : MonoBehaviour
 
         // Apply Velocity
         // We apply _velocity.y vertically as well so that our movement lines up with the weird layout we have going on
-        Vector3 VelocityVec3 = new Vector3(_velocity.x, _velocity.y, _velocity.y);
-        // We divide VelocityVec3 by 50 to make the numbers look nicer in the editor. Probably not best practice
-        controller.Move(VelocityVec3 * _speedMod / 50);
+        Vector3 VelocityVec3 = new Vector3(_velocity.x, _velocity.y, _velocity.y) * _speedMod / 50;
 
+        if (VelocityVec3 != Vector3.zero)
+        {
+            // We divide VelocityVec3 by 50 to make the numbers look nicer in the editor. Probably not best practice
+            MoveWithCollision(VelocityVec3);
+        }
 
         // Cleanup
         doFrictionX = true;
         doFrictionY = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 movement = new Vector3(_velocity.x, _velocity.y, _velocity.y) * _speedMod / 50;
+
+        Gizmos.DrawWireCube(transform.position + (transform.rotation * bCollider.center) + movement, bCollider.size);
     }
 
     // Move by some set amount in a normalised direction
@@ -100,5 +112,25 @@ public class MovementController : MonoBehaviour
 
         // We multiply speedMod by 10 to make the numbers look nicer in the editor. Probably not best practice
         _velocity += direction.normalized * (velocityMod * 10) * Time.deltaTime;
+    }
+
+    void MoveWithCollision(Vector3 movement)
+    {
+        if (Physics.BoxCast(transform.position + (transform.rotation * bCollider.center) - movement.normalized * 0.01f, bCollider.size / 2,
+            movement.normalized, out RaycastHit hit, transform.rotation, movement.magnitude, LayerMask.GetMask("Obstacle")))
+        {
+            Vector3 correctedNormal = Quaternion.Inverse(hit.transform.rotation) * hit.normal;
+            // TODO: fix forward and backward offset
+            Vector3 boxOffset = new((correctedNormal == Vector3.left ? -bCollider.size.x / 2 : 0) + (correctedNormal == Vector3.right ? bCollider.size.x / 2 : 0),
+                                    (correctedNormal == Vector3.forward ? bCollider.size.z / 2 : 0) + (correctedNormal == Vector3.back ? -bCollider.size.z / 2 : 0),
+                                    (correctedNormal == Vector3.forward ? bCollider.size.z / 2 : 0) + (correctedNormal == Vector3.back ? -bCollider.size.z / 2 : 0));
+
+            transform.position += ((hit.distance * movement.normalized) + boxOffset);
+            _velocity = Vector2.zero;
+        }
+        else
+        {
+            transform.position += movement;
+        }
     }
 }
