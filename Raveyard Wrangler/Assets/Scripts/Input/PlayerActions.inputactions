@@ -51,13 +51,22 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "aim",
+                    "name": "mouseAim",
                     "type": "Value",
                     "id": "b9937199-29fe-45ab-9d9e-fb0ce03954c3",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "stickAim",
+                    "type": "Button",
+                    "id": "bdbdc6ee-a5b4-4dc2-a37c-4d7b3722e39a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -80,17 +89,6 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "focus",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b383a1bc-47ce-4fac-9add-fd08b6a9875b",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -288,7 +286,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse+Keyboard",
-                    "action": "aim",
+                    "action": "mouseAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5297dbf-528b-4f9d-b059-8730551571a8",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "stickAim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

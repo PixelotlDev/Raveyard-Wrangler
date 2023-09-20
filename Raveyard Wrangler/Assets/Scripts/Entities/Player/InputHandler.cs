@@ -23,18 +23,26 @@ public class InputHandler : MonoBehaviour
     {
         // MOVE PLAYER
         Vector2 movementVect = actions.gameplay.move.ReadValue<Vector2>();
-        if (movementVect != Vector2.zero)
+        if(movementVect != Vector2.zero)
         {
             playerController.AddVelocity(movementVect);
         }
 
         // ROTATE WEAPON
-
-        if (/*mouse is being used to aim*/)
+        // If mouse is being used for aiming
+        if(actions.gameplay.mouseAim.ReadValue<Vector2>() != Vector2.zero)
         {
             // Gets the world pos pointed to by the screen 
-            Vector2 worldPos = Camera.main.ScreenToViewportPoint(actions.gameplay.aim.ReadValue<Vector2>() - new Vector2(Screen.width / 2, Screen.height / 2));
+            Vector2 worldPos = Camera.main.ScreenToViewportPoint(actions.gameplay.mouseAim.ReadValue<Vector2>() - new Vector2(Screen.width / 2, Screen.height / 2));
             weapon.RotateToward(worldPos);
+        }
+        else if(actions.gameplay.stickAim.ReadValue<Vector2>() != Vector2.zero)
+        {
+            weapon.RotateToward(actions.gameplay.stickAim.ReadValue<Vector2>());
+        }
+        else if(actions.gameplay.move.ReadValue<Vector2>() != Vector2.zero)
+        {
+            weapon.RotateToward(actions.gameplay.move.ReadValue<Vector2>());
         }
     }
 

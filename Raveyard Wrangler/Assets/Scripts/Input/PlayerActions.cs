@@ -73,13 +73,22 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""aim"",
+                    ""name"": ""mouseAim"",
                     ""type"": ""Value"",
                     ""id"": ""b9937199-29fe-45ab-9d9e-fb0ce03954c3"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""stickAim"",
+                    ""type"": ""Button"",
+                    ""id"": ""bdbdc6ee-a5b4-4dc2-a37c-4d7b3722e39a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -102,17 +111,6 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Controller"",
                     ""action"": ""focus"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b383a1bc-47ce-4fac-9add-fd08b6a9875b"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -310,7 +308,18 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse+Keyboard"",
-                    ""action"": ""aim"",
+                    ""action"": ""mouseAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5297dbf-528b-4f9d-b059-8730551571a8"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""stickAim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -371,7 +380,8 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_gameplay_dodge = m_gameplay.FindAction("dodge", throwIfNotFound: true);
         m_gameplay_focus = m_gameplay.FindAction("focus", throwIfNotFound: true);
         m_gameplay_touch = m_gameplay.FindAction("touch", throwIfNotFound: true);
-        m_gameplay_aim = m_gameplay.FindAction("aim", throwIfNotFound: true);
+        m_gameplay_mouseAim = m_gameplay.FindAction("mouseAim", throwIfNotFound: true);
+        m_gameplay_stickAim = m_gameplay.FindAction("stickAim", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -438,7 +448,8 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_dodge;
     private readonly InputAction m_gameplay_focus;
     private readonly InputAction m_gameplay_touch;
-    private readonly InputAction m_gameplay_aim;
+    private readonly InputAction m_gameplay_mouseAim;
+    private readonly InputAction m_gameplay_stickAim;
     public struct GameplayActions
     {
         private @PlayerActions m_Wrapper;
@@ -448,7 +459,8 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @dodge => m_Wrapper.m_gameplay_dodge;
         public InputAction @focus => m_Wrapper.m_gameplay_focus;
         public InputAction @touch => m_Wrapper.m_gameplay_touch;
-        public InputAction @aim => m_Wrapper.m_gameplay_aim;
+        public InputAction @mouseAim => m_Wrapper.m_gameplay_mouseAim;
+        public InputAction @stickAim => m_Wrapper.m_gameplay_stickAim;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -473,9 +485,12 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @touch.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
                 @touch.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
                 @touch.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
-                @aim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
-                @aim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
-                @aim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
+                @mouseAim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseAim;
+                @mouseAim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseAim;
+                @mouseAim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseAim;
+                @stickAim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
+                @stickAim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
+                @stickAim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -495,9 +510,12 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @touch.started += instance.OnTouch;
                 @touch.performed += instance.OnTouch;
                 @touch.canceled += instance.OnTouch;
-                @aim.started += instance.OnAim;
-                @aim.performed += instance.OnAim;
-                @aim.canceled += instance.OnAim;
+                @mouseAim.started += instance.OnMouseAim;
+                @mouseAim.performed += instance.OnMouseAim;
+                @mouseAim.canceled += instance.OnMouseAim;
+                @stickAim.started += instance.OnStickAim;
+                @stickAim.performed += instance.OnStickAim;
+                @stickAim.canceled += instance.OnStickAim;
             }
         }
     }
@@ -561,7 +579,8 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnDodge(InputAction.CallbackContext context);
         void OnFocus(InputAction.CallbackContext context);
         void OnTouch(InputAction.CallbackContext context);
-        void OnAim(InputAction.CallbackContext context);
+        void OnMouseAim(InputAction.CallbackContext context);
+        void OnStickAim(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
