@@ -15,11 +15,13 @@ kanban-plugin: basic
 
 ## Ongoing
 
+- [ ] **Make level generator**<br><br> - [x] Spawn ground<br> - [ ] Replace ground with grave dirt<br> - [ ] Spawn gravestones<br> - [ ] Spawn trees
 - [ ] **Create a camera controller**<br><br> - [x] Player tracking<br> - [ ] ...?
 
 
 ## In Progress
 
+- [ ] **Add weapons system**<br><br> - [ ] Weapon pointing<br> - [ ] Attack handling<br> - [ ] Projectiles
 
 
 ## Complete

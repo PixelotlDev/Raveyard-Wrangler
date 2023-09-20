@@ -62,6 +62,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""aim"",
+                    ""type"": ""Value"",
+                    ""id"": ""2cb985f1-9736-4523-994e-0d633f211ecd"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -251,6 +260,39 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""action"": ""focus"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7fa880f-17d8-40a1-aee0-1b4c1422158c"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6217323-62c7-40bf-8fd8-10c6c4479771"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87593651-130d-4d8c-b8fa-7d2a5ded4d92"",
+                    ""path"": ""<Touchscreen>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -269,6 +311,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_gameplay_attack = m_gameplay.FindAction("attack", throwIfNotFound: true);
         m_gameplay_dodge = m_gameplay.FindAction("dodge", throwIfNotFound: true);
         m_gameplay_focus = m_gameplay.FindAction("focus", throwIfNotFound: true);
+        m_gameplay_aim = m_gameplay.FindAction("aim", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -334,6 +377,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_attack;
     private readonly InputAction m_gameplay_dodge;
     private readonly InputAction m_gameplay_focus;
+    private readonly InputAction m_gameplay_aim;
     public struct GameplayActions
     {
         private @PlayerActions m_Wrapper;
@@ -342,6 +386,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @attack => m_Wrapper.m_gameplay_attack;
         public InputAction @dodge => m_Wrapper.m_gameplay_dodge;
         public InputAction @focus => m_Wrapper.m_gameplay_focus;
+        public InputAction @aim => m_Wrapper.m_gameplay_aim;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -363,6 +408,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @focus.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
                 @focus.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
                 @focus.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
+                @aim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
+                @aim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
+                @aim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -379,6 +427,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @focus.started += instance.OnFocus;
                 @focus.performed += instance.OnFocus;
                 @focus.canceled += instance.OnFocus;
+                @aim.started += instance.OnAim;
+                @aim.performed += instance.OnAim;
+                @aim.canceled += instance.OnAim;
             }
         }
     }
@@ -414,6 +465,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
         void OnFocus(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
