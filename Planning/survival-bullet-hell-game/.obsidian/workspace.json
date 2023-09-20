@@ -25,7 +25,7 @@
             "state": {
               "type": "kanban",
               "state": {
-                "file": "Kanban Boards/Code/Code Kanban.md"
+                "file": "Kanban Boards/Art/Art Kanban.md"
               }
             }
           }
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kanban Boards/Code/Code Kanban.md",
+                "file": "Kanban Boards/Art/Art Kanban.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kanban Boards/Code/Code Kanban.md",
+                "file": "Kanban Boards/Art/Art Kanban.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kanban Boards/Code/Code Kanban.md"
+                "file": "Kanban Boards/Art/Art Kanban.md"
               }
             }
           },
@@ -171,8 +171,13 @@
   },
   "active": "4f4c3632af38f989",
   "lastOpenFiles": [
-    "Kanban Boards/Art/Art Kanban.md",
     "Kanban Boards/Code/Code Kanban.md",
+    "Assets/Enemies/Boss/The Technoplasm Terror.aseprite",
+    "Assets/Enemies/Boss/The Spookball Champion.aseprite",
+    "Assets/Enemies/Boss/The Phantom Prankster.aseprite",
+    "Assets/Enemies/Boss",
+    "Assets/Enemies/New folder",
+    "Kanban Boards/Art/Art Kanban.md",
     "Assets/Terrain/Grass.png",
     "Assets/Terrain/Grass.aseprite",
     "Assets/Terrain",
@@ -187,11 +192,6 @@
     "Wiki/Weapons/Ranged/Ecto-no-more.md",
     "Assets/Player/Player.png",
     "Assets/Weapons/Ranged/Ecto-no-more/Ecto-no-more.aseprite",
-    "Assets/Weapons/Ranged/Ecto-no-more/Ecto-no-more Icon.aseprite",
-    "Assets/Weapons/Ranged/Ecto-no-more",
-    "Assets/Weapons/Ranged/New folder",
-    "Assets/Weapons/Ranged/Ecto Cannon/Ecto Cannon Icon.aseprite",
-    "Assets/Weapons/Ranged/Ecto Blaster.aseprite",
     "Wiki/Weapons/Ranged/Ecto Blaster.md",
     "Assets/Weapons/Melee/Shovel/Shovel.png",
     "Project Dependencies.md",
