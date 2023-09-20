@@ -9,7 +9,7 @@ public class WeaponManager : MonoBehaviour
     Transform parentTransform;
 
     [SerializeField]
-    float sqrtRotateDistance;
+    float rotateDistance;
 
     void Awake()
     {
@@ -27,14 +27,12 @@ public class WeaponManager : MonoBehaviour
         Vector3 normalPoint = point.normalized;
         Vector3 adjustedPoint = new Vector3(normalPoint.x, 0, normalPoint.y);
 
-        transform.localPosition = adjustedPoint * 1.5f;
+        transform.localPosition = adjustedPoint * rotateDistance;
 
         // Calculate the angle (in 360 degrees) that we want our weapon to point in, then set our rotation to that
         float lookAngle = Vector3.SignedAngle(parentTransform.forward, adjustedPoint, parentTransform.up);
         if(lookAngle > -90 && lookAngle < 90) { lookAngle = -lookAngle; }
 
         transform.rotation = Quaternion.Euler(0, 0, lookAngle);
-
-        //transform.localScale
     }
 }

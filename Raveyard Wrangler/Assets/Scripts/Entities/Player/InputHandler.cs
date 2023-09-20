@@ -29,9 +29,13 @@ public class InputHandler : MonoBehaviour
         }
 
         // ROTATE WEAPON
-        // Gets the world pos pointed to by the screen 
-        Vector2 worldPos = Camera.main.ScreenToViewportPoint(actions.gameplay.mouseAim.ReadValue<Vector2>() - new Vector2(Screen.width / 2, Screen.height / 2));
-        weapon.RotateToward(worldPos);
+
+        if (/*mouse is being used to aim*/)
+        {
+            // Gets the world pos pointed to by the screen 
+            Vector2 worldPos = Camera.main.ScreenToViewportPoint(actions.gameplay.aim.ReadValue<Vector2>() - new Vector2(Screen.width / 2, Screen.height / 2));
+            weapon.RotateToward(worldPos);
+        }
     }
 
     private void OnEnable()
