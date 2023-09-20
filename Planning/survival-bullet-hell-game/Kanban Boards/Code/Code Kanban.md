@@ -21,7 +21,7 @@ kanban-plugin: basic
 
 ## In Progress
 
-- [ ] **Add weapons system**<br><br> - [ ] Weapon pointing<br> - [ ] Attack handling<br> - [ ] Projectiles
+- [ ] **Add weapons system**<br><br> - [x] Weapon pointing<br> - [ ] Attack handling<br> - [ ] Projectiles
 
 
 ## Complete

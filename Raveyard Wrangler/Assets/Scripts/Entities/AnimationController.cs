@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    [SerializeField]
     PlayerActions actions;
+
     [SerializeField]
     Animator animator;
     [SerializeField]

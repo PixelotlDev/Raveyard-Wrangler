@@ -64,9 +64,27 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""aim"",
+                    ""name"": ""touch"",
                     ""type"": ""Value"",
                     ""id"": ""2cb985f1-9736-4523-994e-0d633f211ecd"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""stickAim"",
+                    ""type"": ""Value"",
+                    ""id"": ""b9937199-29fe-45ab-9d9e-fb0ce03954c3"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""mouseAim"",
+                    ""type"": ""Value"",
+                    ""id"": ""1b602d79-1dcd-44be-a3d9-8b3e17f0459b"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -263,34 +281,34 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a7fa880f-17d8-40a1-aee0-1b4c1422158c"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d6217323-62c7-40bf-8fd8-10c6c4479771"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""87593651-130d-4d8c-b8fa-7d2a5ded4d92"",
                     ""path"": ""<Touchscreen>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""aim"",
+                    ""action"": ""touch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6a7692b-9416-4d94-bf5b-43e8746bba16"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""stickAim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9631248-d26e-40a0-9f4f-b4989496da88"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""mouseAim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -311,7 +329,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_gameplay_attack = m_gameplay.FindAction("attack", throwIfNotFound: true);
         m_gameplay_dodge = m_gameplay.FindAction("dodge", throwIfNotFound: true);
         m_gameplay_focus = m_gameplay.FindAction("focus", throwIfNotFound: true);
-        m_gameplay_aim = m_gameplay.FindAction("aim", throwIfNotFound: true);
+        m_gameplay_touch = m_gameplay.FindAction("touch", throwIfNotFound: true);
+        m_gameplay_stickAim = m_gameplay.FindAction("stickAim", throwIfNotFound: true);
+        m_gameplay_mouseAim = m_gameplay.FindAction("mouseAim", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -377,7 +397,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_attack;
     private readonly InputAction m_gameplay_dodge;
     private readonly InputAction m_gameplay_focus;
-    private readonly InputAction m_gameplay_aim;
+    private readonly InputAction m_gameplay_touch;
+    private readonly InputAction m_gameplay_stickAim;
+    private readonly InputAction m_gameplay_mouseAim;
     public struct GameplayActions
     {
         private @PlayerActions m_Wrapper;
@@ -386,7 +408,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @attack => m_Wrapper.m_gameplay_attack;
         public InputAction @dodge => m_Wrapper.m_gameplay_dodge;
         public InputAction @focus => m_Wrapper.m_gameplay_focus;
-        public InputAction @aim => m_Wrapper.m_gameplay_aim;
+        public InputAction @touch => m_Wrapper.m_gameplay_touch;
+        public InputAction @stickAim => m_Wrapper.m_gameplay_stickAim;
+        public InputAction @mouseAim => m_Wrapper.m_gameplay_mouseAim;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -408,9 +432,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @focus.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
                 @focus.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
                 @focus.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnFocus;
-                @aim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
-                @aim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
-                @aim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
+                @touch.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
+                @touch.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
+                @touch.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTouch;
+                @stickAim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
+                @stickAim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
+                @stickAim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
+                @mouseAim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseAim;
+                @mouseAim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseAim;
+                @mouseAim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMouseAim;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -427,9 +457,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @focus.started += instance.OnFocus;
                 @focus.performed += instance.OnFocus;
                 @focus.canceled += instance.OnFocus;
-                @aim.started += instance.OnAim;
-                @aim.performed += instance.OnAim;
-                @aim.canceled += instance.OnAim;
+                @touch.started += instance.OnTouch;
+                @touch.performed += instance.OnTouch;
+                @touch.canceled += instance.OnTouch;
+                @stickAim.started += instance.OnStickAim;
+                @stickAim.performed += instance.OnStickAim;
+                @stickAim.canceled += instance.OnStickAim;
+                @mouseAim.started += instance.OnMouseAim;
+                @mouseAim.performed += instance.OnMouseAim;
+                @mouseAim.canceled += instance.OnMouseAim;
             }
         }
     }
@@ -465,7 +501,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
         void OnFocus(InputAction.CallbackContext context);
-        void OnAim(InputAction.CallbackContext context);
+        void OnTouch(InputAction.CallbackContext context);
+        void OnStickAim(InputAction.CallbackContext context);
+        void OnMouseAim(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -42,9 +42,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "aim",
+                    "name": "touch",
                     "type": "Value",
                     "id": "2cb985f1-9736-4523-994e-0d633f211ecd",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "stickAim",
+                    "type": "Value",
+                    "id": "b9937199-29fe-45ab-9d9e-fb0ce03954c3",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "mouseAim",
+                    "type": "Value",
+                    "id": "1b602d79-1dcd-44be-a3d9-8b3e17f0459b",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -241,34 +259,34 @@
                 },
                 {
                     "name": "",
-                    "id": "a7fa880f-17d8-40a1-aee0-1b4c1422158c",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d6217323-62c7-40bf-8fd8-10c6c4479771",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "87593651-130d-4d8c-b8fa-7d2a5ded4d92",
                     "path": "<Touchscreen>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "aim",
+                    "action": "touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6a7692b-9416-4d94-bf5b-43e8746bba16",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "stickAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9631248-d26e-40a0-9f4f-b4989496da88",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "mouseAim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
