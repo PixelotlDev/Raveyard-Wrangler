@@ -10,18 +10,19 @@ kanban-plugin: basic
 
 ## Backlog
 
-- [ ] **Create an input handler**<br><br> - [x] Set up Unity Input System<br><br> - Configure controls for all platforms<br>	 - [ ] Keyboard controls<br>	 - [ ] Gamepad controls<br>	 - [ ] Touchscreen controls<br><br> - Handle gameplay controls<br>	 - [ ] Movement<br>	 - [ ] Dodging<br>	 - [ ] Attacking<br>	 - [ ] Focusing<br>- Handle UI controls<br>	-  [ ] Navigation<br>	-  [ ] Selection<br>	-  [ ] Back
+- [ ] **Make level generator**<br><br> - [x] Spawn ground<br> - [ ] Replace ground with grave dirt<br> - [ ] Spawn gravestones<br> - [ ] Spawn trees
+- [ ] **Add weapons system**<br><br> - [x] Weapon pointing<br> - [ ] Attack handling<br> - [ ] Projectiles
 
 
 ## Ongoing
 
-- [ ] **Make level generator**<br><br> - [x] Spawn ground<br> - [ ] Replace ground with grave dirt<br> - [ ] Spawn gravestones<br> - [ ] Spawn trees
+- [ ] **Create an input handler**<br><br> - [x] Set up Unity Input System<br><br> - Configure controls for all platforms<br>	 - [x] Keyboard controls<br>	 - [x] Gamepad controls<br>	 - [ ] Touchscreen controls<br><br> - Handle gameplay controls<br>	 - [ ] Movement<br>	 - [ ] Dodging<br>	 - [ ] Attacking<br>	 - [ ] Focusing<br>- Handle UI controls<br>	-  [ ] Navigation<br>	-  [ ] Selection<br>	-  [ ] Back
 - [ ] **Create a camera controller**<br><br> - [x] Player tracking<br> - [ ] ...?
 
 
 ## In Progress
 
-- [ ] **Add weapons system**<br><br> - [x] Weapon pointing<br> - [ ] Attack handling<br> - [ ] Projectiles
+- [ ] **Create a cursor handling script**<br><br> - [x] Draw to screen<br> - [x] Hide system cursor<br> - [ ] Derive texture from settings
 
 
 ## Complete

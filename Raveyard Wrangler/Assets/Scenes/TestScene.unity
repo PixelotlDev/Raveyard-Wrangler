@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.12107873, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -316,6 +316,8 @@ GameObject:
   - component: {fileID: 2016398213}
   - component: {fileID: 2016398214}
   - component: {fileID: 2016398215}
+  - component: {fileID: 2016398217}
+  - component: {fileID: 2016398216}
   m_Layer: 0
   m_Name: 'Game Manager '
   m_TagString: Untagged
@@ -366,6 +368,36 @@ MonoBehaviour:
   grassPrefab: {fileID: 4377518460471090867, guid: 0539f8357c5e33a4db7e8fca023ae5b3, type: 3}
   terrainParent: {fileID: 1645390873}
   levelSize: {x: 20, y: 10}
+--- !u!114 &2016398216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016398212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5529e1a35fcb94c82eecf33828ed6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1521543174}
+  weapon: {fileID: 2051086067}
+  cursor: {fileID: 2016398217}
+  cam: {fileID: 963194227}
+--- !u!114 &2016398217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016398212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5a7591afc55714184f57b181baf8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 2800000, guid: 93e1f9355dd36f24292d226c854b17f3, type: 3}
+  cursorDistance: 3
 --- !u!1 &2051086064
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,8 +569,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 3254542310901164559, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
+      propertyPath: cursor
+      value: 
+      objectReference: {fileID: 2800000, guid: 93e1f9355dd36f24292d226c854b17f3, type: 3}
+    - target: {fileID: 3254542310901164559, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
       propertyPath: weapon
       value: 
       objectReference: {fileID: 2051086067}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3254542310901164559, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5123330fd6304b4f8356311319fc74c, type: 3}
