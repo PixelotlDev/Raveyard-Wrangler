@@ -12,6 +12,7 @@ kanban-plugin: basic
 
 - [ ] **Make level generator**<br><br> - [x] Spawn ground<br> - [ ] Replace ground with grave dirt<br> - [ ] Spawn gravestones<br> - [ ] Spawn trees
 - [ ] **Add weapons system**<br><br> - [x] Weapon pointing<br> - [ ] Attack handling<br> - [ ] Projectiles
+- [ ] **Create settings handler**<br><br> - [ ] Settings carry over to game
 
 
 ## Ongoing

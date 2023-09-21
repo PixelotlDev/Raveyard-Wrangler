@@ -1,0 +1,8 @@
+{
+  "stringSettings": {
+    "cursorTexturePath": "Assets/Sprites/Meta/Cursor16_circle.png"
+  },
+  "intSettings": {
+    "cursorPixelSize": 16
+  }
+}
