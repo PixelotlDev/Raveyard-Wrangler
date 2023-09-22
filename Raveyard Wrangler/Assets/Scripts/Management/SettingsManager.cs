@@ -17,18 +17,8 @@ public struct Settings
     public Dictionary<string, bool> boolSettings;
 }
 
-public class SettingsManager
+public class SettingsManager : MonoBehaviour
 {
-    // Reference to itself that can be accessed from anywhere
-    private static readonly SettingsManager instance = new SettingsManager();
-    public static SettingsManager Instance
-    {
-        get
-        {
-            return instance;
-        }
-    }
-
     // EDITOR VARIABLES
     [SerializeField]
     string settingsDefineFilePath;
@@ -38,13 +28,9 @@ public class SettingsManager
     // SETTINGS
     Settings settings;
 
-    // Explicit static constructor to tell C# compiler
-    // not to mark type as beforefieldinit
-    static SettingsManager()
+    void Start()
     {
-        instance.LoadFile();
-        Debug.Log("cursorTexturePath: " + instance.GetSetting<string>("cursorTexturePath"));
-        Debug.Log("cursorPixelSize: " + instance.GetSetting<int>("cursorPixelSize"));
+        LoadFile();
     }
 
     public void SetSetting<T>(string key, T value)

@@ -171,6 +171,9 @@
   },
   "active": "4f4c3632af38f989",
   "lastOpenFiles": [
+    "Assets/Bullets/Enemy/Regular bullet.png",
+    "Assets/Bullets/Player/Regular bullet.png",
+    "Assets/Weapons/Ranged/Ecto Blaster/Ecto Blaster.png",
     "Assets/Cursor16_alt - Copy.aseprite",
     "Assets/Cursor16 - Copy.aseprite",
     "Assets/Cursor16_circle - Copy.aseprite",
@@ -184,7 +187,6 @@
     "Assets/Terrain/Grass.png",
     "Assets/Terrain/Grass.aseprite",
     "Assets/Terrain",
-    "Assets/New folder",
     "Assets/Structures/Tree.png",
     "Wiki/Weapons/Ranged/Ecto-no-more.md",
     "Kanban Boards/Design/Design Kanban.md",
@@ -200,7 +202,6 @@
     "Assets/Cursor16_alt.png",
     "Assets/Cursor16.png",
     "Assets/Player/GameIcon.png",
-    "Assets/Cursor.png",
     "Raveyard Wrangler.md",
     "Wiki/Structures/Natural/Bush.md",
     "Wiki/Structures/Natural/Gravestones.md",
@@ -215,7 +216,6 @@
     "Excalidraw/Pause_Menu.excalidraw.md",
     "Excalidraw/Generic_UI.excalidraw.md",
     "Excalidraw/Virtual_controls.excalidraw.md",
-    "Wiki/UI/Pause Menu UI.md",
-    "Assignment stuff/Screenshots/Kanban/Design Kanban 1.png"
+    "Wiki/UI/Pause Menu UI.md"
   ]
 }

@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum Scene
+{
+    Setup,
+    Level
+}
+
 public class SceneHandler : MonoBehaviour
 {
-    [SerializeField]
-    string nextScene;
-
-    public void NextScene()
+    public void LoadScene(Scene scene)
     {
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(scene.ToString());
     }
 }

@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class CursorHandler : MonoBehaviour
 {
-    // COMMON INTERFACE
-    CommonInterface commonInterface;
+    // GAME MANAGER
+    GameManager gameManager = GameManager.instance;
 
     // EDITOR VARIABLES
-    Texture2D sprite;
+    [SerializeField]
+    Texture sprite;
 
-    public float cursorDistance;
+    [SerializeField]
+    float cursorDistance;
 
     // CODE VARIABLES
     Vector2 position;
@@ -22,9 +24,11 @@ public class CursorHandler : MonoBehaviour
 
     void Awake()
     {
-        commonInterface = CommonInterface.Instance;
-        commonInterface.ReloadSettingsEvent.AddListener(ReloadSettings);
+        gameManager.ReloadSettingsEvent.AddListener(LoadSettings);
 
+        LoadSettings();
+        
+        // Turn the system cursor off
         Cursor.visible = false;
     }
 
@@ -56,16 +60,8 @@ public class CursorHandler : MonoBehaviour
         isVisible = false;
     }
 
-    void ReloadSettings()
+    void LoadSettings()
     {
-        GetImageFromPath(commonInterface.settingsManager.GetSetting<string>("cursorTexturePath"));
-
-        cursorSize = commonInterface.settingsManager.GetSetting<int>("cursorPixelSize");
-    }
-
-    void GetImageFromPath(string path)
-    {
-        byte[] imageBytes = File.ReadAllBytes(path);
-        sprite.LoadImage(imageBytes);
+        cursorSize = gameManager.settingsManager.GetSetting<int>("cursorPixelSize");
     }
 }

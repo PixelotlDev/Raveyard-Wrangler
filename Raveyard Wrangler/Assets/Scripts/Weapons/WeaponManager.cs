@@ -9,6 +9,9 @@ public class WeaponManager : MonoBehaviour
     Transform parentTransform;
 
     [SerializeField]
+    SpriteRenderer sprite;
+
+    [SerializeField]
     float rotateDistance;
 
     void Awake()
@@ -31,7 +34,10 @@ public class WeaponManager : MonoBehaviour
 
         // Calculate the angle (in 360 degrees) that we want our weapon to point in, then set our rotation to that
         float lookAngle = Vector3.SignedAngle(parentTransform.forward, adjustedPoint, parentTransform.up);
-        if(lookAngle > -90 && lookAngle < 90) { lookAngle = -lookAngle; }
+        if (lookAngle > -90 && lookAngle < 90) { lookAngle = -lookAngle; }
+
+        sprite.flipX = false;
+        if (lookAngle > 0) { sprite.flipX = true; }
 
         transform.rotation = Quaternion.Euler(0, 0, lookAngle);
     }

@@ -30,7 +30,10 @@ public class CameraController : MonoBehaviour
     {
         transform.position = player.position + offset;
 
-        thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, cameraSize * (playerController.SpeedMod - (playerController.SpeedMod - 1) / 2), 0.2f);
+        if (!reduceMotion)
+        {
+            thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, cameraSize * (playerController.SpeedMod - (playerController.SpeedMod - 1) / 2), 0.2f);
+        }
         
         // This basically just sets drawPoint's position to directly behind the player at the point where the camera starts
         drawPoint.localPosition = new Vector3(-offset.x, offset.z - offset.y, 0);
