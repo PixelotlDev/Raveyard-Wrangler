@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class InputHandler : MonoBehaviour
     void Awake()
     {
         actions = new PlayerActions();
+
+        actions.gameplay.attack.performed += FireWeapon;
     }
 
     void Update()
@@ -76,6 +79,11 @@ public class InputHandler : MonoBehaviour
         {
             weapon.RotateToward(actions.gameplay.move.ReadValue<Vector2>());
         }
+    }
+
+    public void FireWeapon(InputAction.CallbackContext context)
+    {
+        weapon.FireBullet();
     }
 
     private void OnEnable()

@@ -9,6 +9,8 @@ public class WeaponManager : MonoBehaviour
     Transform parentTransform;
 
     [SerializeField]
+    GameObject bullet;
+    [SerializeField]
     SpriteRenderer sprite;
 
     [SerializeField]
@@ -19,9 +21,11 @@ public class WeaponManager : MonoBehaviour
         parentTransform = GetComponentInParent<Transform>();
     }
 
-    void Update()
+    public void FireBullet()
     {
-        
+        Vector3 point = transform.rotation * Vector3.one;
+        GameObject newBullet = Instantiate(bullet, transform.position + point.normalized, bullet.transform.rotation);
+        newBullet.GetComponent<MovementController>().AddVelocity(point);
     }
 
     public void RotateToward(Vector3 point)

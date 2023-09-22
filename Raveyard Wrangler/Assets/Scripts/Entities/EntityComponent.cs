@@ -25,4 +25,13 @@ public class EntityComponent : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        BulletComponent bullet = other.GetComponent<BulletComponent>();
+        if(bullet != null && bullet.gameObject.tag != tag)
+        {
+            health -= bullet.damage;
+        }
+    }
 }
