@@ -11,7 +11,6 @@ kanban-plugin: basic
 ## Backlog
 
 - [ ] **Make level generator**<br><br> - [x] Spawn ground<br> - [ ] Replace ground with grave dirt<br> - [ ] Spawn gravestones<br> - [ ] Spawn trees
-- [ ] **Add weapons system**<br><br> - [x] Weapon pointing<br> - [ ] Attack handling<br> - [ ] Projectiles
 
 
 ## Ongoing
@@ -22,6 +21,7 @@ kanban-plugin: basic
 
 ## In Progress
 
+- [ ] **Add weapons system**<br><br> - [x] Weapon pointing<br> - [ ] Attack handling<br> - [x] Projectiles
 
 
 ## Complete
