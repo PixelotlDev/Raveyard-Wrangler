@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem.Processors;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// Allows control over entity movement (does not use Rigidbody)
+/// </summary>
 public class MovementController : MonoBehaviour
 {
     // UNITY CLASSES
@@ -99,14 +102,10 @@ public class MovementController : MonoBehaviour
         doFrictionY = true;
     }
 
-    private void OnDrawGizmos()
-    {
-        Vector3 movement = new Vector3(_velocity.x, _velocity.y, _velocity.y) * _speedMod / 50;
-
-        Gizmos.DrawWireCube(transform.position + (transform.rotation * bCollider.center) + movement, bCollider.size);
-    }
-
-    // Move by some set amount in a normalised direction
+    /// <summary>
+    /// Adds velocity of some set magnitude to the entity.
+    /// </summary>
+    /// <param name="direction">Direction of the desired velocity vector.</param>
     public void AddVelocity(Vector2 direction)
     {
         // If our force is opposite our current Velocity, apply Friction. Otherwise, do not.
@@ -117,6 +116,10 @@ public class MovementController : MonoBehaviour
         _velocity += direction.normalized * (velocityMod * 10) * Time.deltaTime;
     }
 
+    /// <summary>
+    /// Move the entity while accounting for collision. Custom collision system, uses a BoxCollider.
+    /// </summary>
+    /// <param name="movement">Vector to move along.</param>
     void MoveWithCollision(Vector3 movement)
     {
         if (Physics.BoxCast(transform.position + (transform.rotation * bCollider.center) - movement.normalized * 0.01f, bCollider.size / 2,

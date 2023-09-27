@@ -1,6 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public enum GameScene
+{
+    Setup,
+    Level
+}
 
 public abstract class GameState
 {
@@ -16,7 +23,7 @@ public class InitialiseGS : GameState
 {
     public override void Start()
     {
-        gameManager.sceneHandler.LoadScene(Scene.Level);
+        SceneManager.LoadScene(GameScene.Level.ToString());
     }
 }
 

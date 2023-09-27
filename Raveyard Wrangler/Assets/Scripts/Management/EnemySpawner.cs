@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Spawns enemies with some interval outside of a certain radius of the player - ideally offscreen
+/// </summary>
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]

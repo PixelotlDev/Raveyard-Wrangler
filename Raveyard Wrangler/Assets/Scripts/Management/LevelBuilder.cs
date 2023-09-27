@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Places ground tiles and trees around the level upon loading the level
+/// </summary>
 public class LevelBuilder : MonoBehaviour
 {
     [SerializeField]

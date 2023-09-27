@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Takes inputs and relays them to specific behaviours.
+/// </summary>
 public class InputHandler : MonoBehaviour
 {
     PlayerActions actions;
@@ -100,6 +103,10 @@ public class InputHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resets the shot timer (used for constant firing)
+    /// </summary>
+    /// <param name="context">Required parameter for a function that subscrbes to an Input System event</param>
     public void ResetWeapon(InputAction.CallbackContext context)
     {
         shotTimer = fireRate;
