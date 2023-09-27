@@ -20,11 +20,6 @@ public class InitialiseGS : GameState
     }
 }
 
-public class TitleGS : GameState
-{
-    
-}
-
 public class GameGS : GameState
 {
     

@@ -9,7 +9,6 @@ using UnityEngine.Events;
 public enum GameStates
 {
     initialise,
-    title,
     game
 }
 
@@ -58,9 +57,6 @@ public class GameManager : MonoBehaviour
         {
             case GameStates.initialise:
                 gameState = new InitialiseGS();
-                break;
-            case GameStates.title:
-                gameState = new TitleGS();
                 break;
             case GameStates.game:
                 gameState = new GameGS();

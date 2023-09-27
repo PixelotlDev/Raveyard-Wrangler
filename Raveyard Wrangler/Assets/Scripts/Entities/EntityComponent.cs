@@ -17,7 +17,7 @@ public class EntityComponent : MonoBehaviour
         {
             if (CompareTag("Player"))
             {
-                gameManager.SetState(GameStates.title);
+                gameManager.SetState(GameStates.initialise);
             }
             else
             {
@@ -29,9 +29,12 @@ public class EntityComponent : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         BulletComponent bullet = other.GetComponent<BulletComponent>();
-        if(bullet != null && bullet.gameObject.tag != tag)
+        if(bullet != null && bullet.gameObject.tag != tag && bullet.hasHitSomething == false)
         {
             health -= bullet.damage;
+
+            bullet.hasHitSomething = true;
+            Destroy(other.gameObject);
         }
     }
 }

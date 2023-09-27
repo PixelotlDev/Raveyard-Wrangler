@@ -1,4 +1,3 @@
-using Palmmedia.ReportGenerator.Core.CodeAnalysis;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -48,6 +47,9 @@ public class MovementController : MonoBehaviour
     }
 
     // BOOLS
+    [SerializeField]
+    bool doCollision = true;
+
     bool doFrictionX;
     bool doFrictionY;
 
@@ -88,7 +90,8 @@ public class MovementController : MonoBehaviour
         if (VelocityVec3 != Vector3.zero)
         {
             // We divide VelocityVec3 by 50 to make the numbers look nicer in the editor. Probably not best practice
-            MoveWithCollision(VelocityVec3);
+            if (doCollision) { MoveWithCollision(VelocityVec3); }
+            else { transform.position += VelocityVec3; }
         }
 
         // Cleanup

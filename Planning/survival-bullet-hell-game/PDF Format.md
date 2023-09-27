@@ -18,11 +18,11 @@
 
 ---
 
-![[Brawler]]
+![[(X) Brawler]]
 
 ---
 
-![[Speedster]]
+![[(X) Speedster]]
 
 ---
 
@@ -30,27 +30,27 @@
 
 ---
 
-![[Shotgun]]
+![[(X) Shotgun]]
 
 ---
 
-![[Rocket launcher]]
+![[(X) Rocket launcher]]
 
 ---
 
-![[Howler]]
+![[(X) Howler]]
 
 ---
 
-![[The Spookball Champion]]
+![[(X) The Spookball Champion]]
 
 ---
 
-![[The Technoplasm Terror]]
+![[(X) The Technoplasm Terror]]
 
 ---
 
-![[The Phantom Prankster]]
+![[(X) The Phantom Prankster]]
 
 ---
 
@@ -58,15 +58,15 @@
 
 ---
 
-![[Shovel]]
+![[(X) Shovel]]
 
 ---
 
-![[Haunted Shovel]]
+![[(X) Haunted Shovel]]
 
 ---
 
-![[Twin Trowels]]
+![[(X) Twin Trowels]]
 
 ---
 
@@ -74,15 +74,15 @@
 
 ---
 
-![[Ecto Cannon]]
+![[(X) Ecto Cannon]]
 
 ---
 
-![[Ecto Burster]]
+![[(X) Ecto Burster]]
 
 ---
 
-![[Ecto-no-more]]
+![[(X) Ecto-no-more]]
 
 ---
 
@@ -90,7 +90,7 @@
 
 ---
 
-![[Gravestones]]
+![[(X) Gravestones]]
 
 ---
 

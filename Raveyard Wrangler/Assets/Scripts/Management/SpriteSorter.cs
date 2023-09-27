@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
@@ -13,13 +12,10 @@ public class SpriteSorter : MonoBehaviour
 
     GameObject[] sprites;
 
-    void Awake()
-    {
-        sprites = GameObject.FindGameObjectsWithTag("Sprite");
-    }
-
     void Update()
     {
+        sprites = GameObject.FindGameObjectsWithTag("Sprite");
+
         QuickSortSprites(0, sprites.Length - 1);
 
         for(int i = 0; i < sprites.Length; i++)

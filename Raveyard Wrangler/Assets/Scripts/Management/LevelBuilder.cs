@@ -8,11 +8,16 @@ public class LevelBuilder : MonoBehaviour
     GameObject grassPrefab;
 
     [SerializeField]
-    Transform terrainParent;
+    GameObject treePrefab;
 
+    [SerializeField]
+    Transform terrainParent;
 
     [SerializeField]
     Vector2 levelSize;
+
+    [SerializeField]
+    float numTrees;
 
     void Awake()
     {
@@ -29,6 +34,17 @@ public class LevelBuilder : MonoBehaviour
                                       (y - halfLevelSize.y) * grassPrefab.transform.localScale.x);
                 Instantiate(grassPrefab, tilePos, grassPrefab.transform.rotation, terrainParent);
             }
+        }
+
+        for (int i = 0; i < numTrees; i++)
+        {
+            int randX = Mathf.RoundToInt(Random.Range(-levelSize.x, levelSize.x));
+            int randY = Mathf.RoundToInt(Random.Range(-levelSize.y, levelSize.y));
+            Vector3 treePos = new(randX * treePrefab.transform.localScale.x,
+                                  randY * treePrefab.transform.localScale.x,
+                                  randY * treePrefab.transform.localScale.x);
+
+            Instantiate(treePrefab, treePos + treePrefab.transform.position, treePrefab.transform.rotation, terrainParent);
         }
     }
 }

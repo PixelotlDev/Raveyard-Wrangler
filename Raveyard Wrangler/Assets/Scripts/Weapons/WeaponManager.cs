@@ -23,9 +23,12 @@ public class WeaponManager : MonoBehaviour
 
     public void FireBullet()
     {
-        Vector3 point = transform.rotation * Vector3.one;
-        GameObject newBullet = Instantiate(bullet, transform.position + point.normalized, bullet.transform.rotation);
-        newBullet.GetComponent<MovementController>().AddVelocity(point);
+        Vector3 position = transform.position;
+        GameObject newBullet = Instantiate(bullet, position, bullet.transform.rotation);
+
+        Vector3 direction = transform.localPosition;
+        Vector3 adjustedDirection = new Vector2(direction.x, direction.z);
+        newBullet.GetComponent<MovementController>().AddVelocity(adjustedDirection);
     }
 
     public void RotateToward(Vector3 point)

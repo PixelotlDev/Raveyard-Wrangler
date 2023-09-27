@@ -17,11 +17,18 @@ public class InputHandler : MonoBehaviour
     [SerializeField]
     Camera cam;
 
+    [SerializeField]
+    float fireRate;
+
+    Vector3 pointerWorldPos;
+
+    float shotTimer;
+
     void Awake()
     {
         actions = new PlayerActions();
 
-        actions.gameplay.attack.performed += FireWeapon;
+        actions.gameplay.attack.performed += ResetWeapon;
     }
 
     void Update()
@@ -43,8 +50,7 @@ public class InputHandler : MonoBehaviour
             Vector2 touchPos = actions.gameplay.touch.ReadValue<Vector2>();
 
             // Gets the world pos pointed to by the screen 
-            Vector2 worldPos = Camera.main.ScreenToViewportPoint(touchPos - new Vector2(Screen.width / 2, Screen.height / 2));
-            weapon.RotateToward(worldPos);
+            pointerWorldPos = Camera.main.ScreenToViewportPoint(touchPos - new Vector2(Screen.width / 2, Screen.height / 2));
 
             // Saves the cursor position for drawing later
             cursor.SetCursorPosition(touchPos);
@@ -55,7 +61,7 @@ public class InputHandler : MonoBehaviour
         {
             Vector2 stickDirection = actions.gameplay.stickAim.ReadValue<Vector2>();
 
-            weapon.RotateToward(stickDirection);
+            pointerWorldPos = stickDirection;
 
             // Saves the cursor position for drawing later
             cursor.SetCursorDirection(stickDirection);
@@ -67,8 +73,7 @@ public class InputHandler : MonoBehaviour
             Vector2 mousePos = actions.gameplay.mouseAim.ReadValue<Vector2>();
 
             // Gets the world pos pointed to by the screen 
-            Vector2 worldPos = Camera.main.ScreenToViewportPoint(mousePos - new Vector2(Screen.width / 2, Screen.height / 2));
-            weapon.RotateToward(worldPos);
+            pointerWorldPos = Camera.main.ScreenToViewportPoint(mousePos - new Vector2(Screen.width / 2, Screen.height / 2));
 
             // Saves the cursor position for drawing later
             cursor.SetCursorPosition(mousePos);
@@ -77,13 +82,27 @@ public class InputHandler : MonoBehaviour
         // Otherwise, if we're moving
         else if (actions.gameplay.move.ReadValue<Vector2>() != Vector2.zero)
         {
-            weapon.RotateToward(actions.gameplay.move.ReadValue<Vector2>());
+            pointerWorldPos = actions.gameplay.move.ReadValue<Vector2>();
+
+            weapon.RotateToward(pointerWorldPos);
+        }
+
+        weapon.RotateToward(pointerWorldPos);
+
+        if (actions.gameplay.attack.IsPressed())
+        {
+            shotTimer += Time.deltaTime;
+            while (shotTimer >= fireRate)
+            {
+                weapon.FireBullet();
+                shotTimer -= fireRate;
+            }
         }
     }
 
-    public void FireWeapon(InputAction.CallbackContext context)
+    public void ResetWeapon(InputAction.CallbackContext context)
     {
-        weapon.FireBullet();
+        shotTimer = fireRate;
     }
 
     private void OnEnable()

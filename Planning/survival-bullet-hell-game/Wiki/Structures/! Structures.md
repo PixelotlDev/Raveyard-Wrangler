@@ -1,5 +1,5 @@
 ### Natural:
-[[Gravestones]]
+[[(X) Gravestones]]
 [[Trees]]
-[[Bush]]
-[[Rock]]
+[[(X) Bush]]
+[[(X) Rock]]

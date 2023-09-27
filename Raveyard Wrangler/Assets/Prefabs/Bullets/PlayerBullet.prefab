@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2546711197823363594}
   - component: {fileID: 2546711197823363593}
   - component: {fileID: 2546711197823363592}
+  - component: {fileID: -6496920249656766306}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Player
@@ -95,7 +96,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2546711197823363703}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.1}
@@ -113,10 +114,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bCollider: {fileID: 2546711197823363594}
-  maxVelocity: 100
+  maxVelocity: 120
   baseFriction: 0
-  velocityMod: 70
+  velocityMod: 120
   _speedMod: 1
+  doCollision: 0
 --- !u!114 &2546711197823363592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +131,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a4b9ac9bf38ea409614f62e779b797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  hasHitSomething: 0
+  lifetime: 5
+--- !u!54 &-6496920249656766306
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546711197823363703}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
