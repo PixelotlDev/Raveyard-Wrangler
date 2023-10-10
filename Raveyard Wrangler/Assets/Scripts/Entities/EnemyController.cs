@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls enemy behaviour
+/// </summary>
 public class EnemyController : MonoBehaviour
 {
     [SerializeField]
@@ -57,6 +60,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Creates a bullet, then fires it at the player
+    /// </summary>
     public void FireBullet()
     {
         Vector3 position = transform.position;

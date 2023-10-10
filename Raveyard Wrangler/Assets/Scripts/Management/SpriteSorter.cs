@@ -24,6 +24,11 @@ public class SpriteSorter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sorts an array by distance from the camera, only works on GameObject arrays
+    /// </summary>
+    /// <param name="firstIndex">Start of the array of sprites being sorted</param>
+    /// <param name="lastIndex">End of the array of sprites being sorted</param>
     void QuickSortSprites(int firstIndex, int lastIndex)
     {
         if (firstIndex < lastIndex)
@@ -35,21 +40,27 @@ public class SpriteSorter : MonoBehaviour
         }
     }
 
-    int PartitionSprites(int firstIndex, int lastIndex)
+    /// <summary>
+    /// Recursive implementation of QuickSort
+    /// </summary>
+    /// <param name="firstIndex">Start of the portion of sprites being sorted</param>
+    /// <param name="lastIndex">End of the portion of sprites being sorted</param>
+    /// <returns>Point at which the portion was split</returns>
+    private int PartitionSprites(int firstIndex, int lastIndex)
     {
-        float pivot = GetZDistanceFromCamera(sprites[firstIndex]);
+        float pivot = GetDistanceFromCamera(sprites[firstIndex]);
 
         int leftIndex = firstIndex + 1;
         int rightIndex = lastIndex;
 
         while(true)
         {
-            while(leftIndex <= rightIndex && GetZDistanceFromCamera(sprites[leftIndex]) <= pivot)
+            while(leftIndex <= rightIndex && GetDistanceFromCamera(sprites[leftIndex]) <= pivot)
             {
                 leftIndex++;
             }
 
-            while (rightIndex >= leftIndex && GetZDistanceFromCamera(sprites[rightIndex]) >= pivot)
+            while (rightIndex >= leftIndex && GetDistanceFromCamera(sprites[rightIndex]) >= pivot)
             {
                 rightIndex--;
             }
@@ -65,7 +76,12 @@ public class SpriteSorter : MonoBehaviour
         return rightIndex;
     }
 
-    float GetZDistanceFromCamera(GameObject gObject)
+    /// <summary>
+    /// Finds the distance between an object and the camera, ignoring the x axis
+    /// </summary>
+    /// <param name="gObject">Target object</param>
+    /// <returns>Distance of object from camera</returns>
+    float GetDistanceFromCamera(GameObject gObject)
     {
         Vector3 objectPos = new Vector3(0, gObject.transform.position.y, gObject.transform.position.z);
         Vector3 cameraPos = new Vector3(0, cameraController.drawPoint.position.y, cameraController.drawPoint.position.z);

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Moves camera so it is following behind the player
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     public Transform player;

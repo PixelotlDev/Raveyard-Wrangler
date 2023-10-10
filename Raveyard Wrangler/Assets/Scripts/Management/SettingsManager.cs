@@ -9,6 +9,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Collection of settings dictionaries
+/// </summary>
 public struct Settings
 {
     public Dictionary<string, string> stringSettings;
@@ -17,6 +20,9 @@ public struct Settings
     public Dictionary<string, bool> boolSettings;
 }
 
+/// <summary>
+/// Manages storing, saving, and loading settings from binary file or from a default json file
+/// </summary>
 public class SettingsManager : MonoBehaviour
 {
     // EDITOR VARIABLES
@@ -32,7 +38,12 @@ public class SettingsManager : MonoBehaviour
     {
         LoadFile();
     }
-
+    /// <summary>
+    /// Replaces or adds a setting to the dictionary of value type T
+    /// </summary>
+    /// <typeparam name="T">Value type</typeparam>
+    /// <param name="key">Setting lookup key</param>
+    /// <param name="value">New setting value</param>
     public void SetSetting<T>(string key, T value)
     {
         switch (value)
@@ -59,6 +70,12 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Retrieves the specified setting's value from the dictionary of value type T
+    /// </summary>
+    /// <typeparam name="T">Value type</typeparam>
+    /// <param name="key">Setting lookup key</param>
+    /// <returns>Setting value</returns>
     public dynamic GetSetting<T>(string key)
     {
         Debug.Log("Name of T: " + typeof(T).Name);
@@ -118,6 +135,9 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Writes settings to a binary file in a standard save file location
+    /// </summary>
     public void SaveFile()
     {
         string destination = Application.persistentDataPath + userSettingsFilePath;
@@ -134,6 +154,9 @@ public class SettingsManager : MonoBehaviour
         file.Close();
     }
 
+    /// <summary>
+    /// Reads settings form a binary file in a standard save file location
+    /// </summary>
     public void LoadFile()
     {
         string destination = Application.persistentDataPath + userSettingsFilePath;
@@ -152,6 +175,9 @@ public class SettingsManager : MonoBehaviour
         file.Close();
     }
 
+    /// <summary>
+    /// Reads settings from a json file containing all default values
+    /// </summary>
     void LeadDefault()
     {
         string destination = Application.dataPath + settingsDefineFilePath;

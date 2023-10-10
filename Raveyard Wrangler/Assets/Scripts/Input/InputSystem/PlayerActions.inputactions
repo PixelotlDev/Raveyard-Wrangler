@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "exit",
+                    "type": "Button",
+                    "id": "c9369fb0-8b05-4b50-9651-f6edb40fb25b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -309,6 +318,28 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "stickAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6812ec82-b1e3-4a14-bf06-e69c9fcd9317",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse+Keyboard",
+                    "action": "exit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b94d165-a2fe-4f8e-ad93-ea9ec1e58da5",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "exit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

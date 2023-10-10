@@ -32,6 +32,7 @@ public class InputHandler : MonoBehaviour
         actions = new PlayerActions();
 
         actions.gameplay.attack.performed += ResetWeapon;
+        actions.gameplay.exit.performed += QuitGame;
     }
 
     void Update()
@@ -110,6 +111,11 @@ public class InputHandler : MonoBehaviour
     public void ResetWeapon(InputAction.CallbackContext context)
     {
         shotTimer = fireRate;
+    }
+
+    public void QuitGame(InputAction.CallbackContext context)
+    {
+        Application.Quit();
     }
 
     private void OnEnable()

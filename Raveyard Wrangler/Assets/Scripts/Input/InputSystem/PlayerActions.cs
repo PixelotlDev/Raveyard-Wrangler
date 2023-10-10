@@ -89,6 +89,15 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""c9369fb0-8b05-4b50-9651-f6edb40fb25b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -333,6 +342,28 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                     ""action"": ""stickAim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6812ec82-b1e3-4a14-bf06-e69c9fcd9317"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse+Keyboard"",
+                    ""action"": ""exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b94d165-a2fe-4f8e-ad93-ea9ec1e58da5"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -393,6 +424,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         m_gameplay_touch = m_gameplay.FindAction("touch", throwIfNotFound: true);
         m_gameplay_mouseAim = m_gameplay.FindAction("mouseAim", throwIfNotFound: true);
         m_gameplay_stickAim = m_gameplay.FindAction("stickAim", throwIfNotFound: true);
+        m_gameplay_exit = m_gameplay.FindAction("exit", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
     }
@@ -461,6 +493,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_touch;
     private readonly InputAction m_gameplay_mouseAim;
     private readonly InputAction m_gameplay_stickAim;
+    private readonly InputAction m_gameplay_exit;
     public struct GameplayActions
     {
         private @PlayerActions m_Wrapper;
@@ -472,6 +505,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         public InputAction @touch => m_Wrapper.m_gameplay_touch;
         public InputAction @mouseAim => m_Wrapper.m_gameplay_mouseAim;
         public InputAction @stickAim => m_Wrapper.m_gameplay_stickAim;
+        public InputAction @exit => m_Wrapper.m_gameplay_exit;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -502,6 +536,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @stickAim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
                 @stickAim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
                 @stickAim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStickAim;
+                @exit.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnExit;
+                @exit.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnExit;
+                @exit.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnExit;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -527,6 +564,9 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
                 @stickAim.started += instance.OnStickAim;
                 @stickAim.performed += instance.OnStickAim;
                 @stickAim.canceled += instance.OnStickAim;
+                @exit.started += instance.OnExit;
+                @exit.performed += instance.OnExit;
+                @exit.canceled += instance.OnExit;
             }
         }
     }
@@ -592,6 +632,7 @@ public partial class @PlayerActions : IInputActionCollection2, IDisposable
         void OnTouch(InputAction.CallbackContext context);
         void OnMouseAim(InputAction.CallbackContext context);
         void OnStickAim(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Feeds the animator component values based on the player's current behaviour
+/// </summary>
 public class AnimationController : MonoBehaviour
 {
     PlayerActions actions;
@@ -12,8 +15,6 @@ public class AnimationController : MonoBehaviour
     SpriteRenderer sprite;
 
     int directionFacing;
-
-    bool flipped;
 
     void Awake()
     {
@@ -28,22 +29,18 @@ public class AnimationController : MonoBehaviour
         if (movementVect.x > 0)
         {
             directionFacing = 1; // right
-            flipped = movementVect.x < 0;
         }
         else if (movementVect.x < 0)
         {
             directionFacing = 2; // left
-            flipped = movementVect.x < 0;
         }
         else if (movementVect.y < 0)
         {
             directionFacing = 0; // up
-            flipped = false;
         }
         else if (movementVect.y > 0)
         {
             directionFacing = 3; // down
-            flipped = false;
         }
 
         animator.SetInteger("Facing", directionFacing);

@@ -6,6 +6,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// List of possible game states
+/// </summary>
 public enum GameStates
 {
     initialise,

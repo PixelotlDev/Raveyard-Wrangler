@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// Handles display of the cursor
+/// </summary>
 public class CursorHandler : MonoBehaviour
 {
     // GAME MANAGER

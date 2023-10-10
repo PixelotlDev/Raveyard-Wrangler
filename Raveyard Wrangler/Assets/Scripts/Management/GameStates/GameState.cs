@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// List of game scenes
+/// </summary>
 public enum GameScene
 {
     Setup,
     Level
 }
 
+/// <summary>
+/// Parent class for all game states
+/// <para>
+/// Should use a list of transitions instead of an "end" update (and perhaps ditch the start update too)
+/// </para>
+/// </summary>
 public abstract class GameState
 {
     // GAME MANAGER
