@@ -1,0 +1,104 @@
+Asset Formats:
+ - Scripts
+	 - .cs (C# code file)
+ - Art
+	 - .aseprite (Aseprite proprietary format)
+	 - .png (exported format for use in Unity)
+
+Asset integration:
+ - .png sprites were required to be set to unfiltered in Unity as to avoid blurring.
+ - Some sprites required continuous cropping such that they could repeat infinitely (the fence, specifically)
+
+Code assets required:
+ - Assets
+	 - Camera
+		 - CameraController.cs
+	 - Entities
+		 - AnimationController.cs
+		 - BulletComponent.cs
+		 - EnemyComponent.cs
+		 - EntityComponent.cs
+		 - MovementController.cs
+	 - Input
+		 - InputHandler.cs
+		 - CursorHandler.cs
+	 - Management
+		 - EnemySpawner.cs
+		 - GameManager.cs
+		 - GameState.cs
+		 - LevelBuilder.cs
+		 - SettingsManager.cs
+		 - SpriteSorter.cs
+	 - Weapons
+		 - WeaponManager.cs
+
+Art assets required:
+ - Assets
+	 - Bullets
+		 - Enemy
+			 - Regular bullet.png ![[Assets/Bullets/Enemy/Regular bullet.png|16]]
+			 - (x) Ecto bullet.png
+			 - (x) Rocket.png
+			 - (x) Shrapnel.png
+			 - (x) Melee swipe.png
+			 - (x) Melee bite.png
+		 - Player
+			 - Regular bullet.png ![[Assets/Bullets/Player/Regular bullet.png|16]]
+			 - (x) Big bullet.png
+			 - (x) Spray cloud.png
+			 - (x) Shovel swipe.png
+			 - (x) Shovel arc.png
+			 - (x) Trowel swipe.png
+	 - Controls
+		 - Button.png ![[Button.png]]
+		 - Joystick back.png ![[Joystick back.png|16]]
+		 - Joystick top.png ![[Joystick top.png|16]]
+	 - Enemies
+		 - Boss
+			 - (x) The Phantom Prankster.png
+			 - (x) The Spookball Champion.png
+			 - (x) The Technoplasm Terror.png
+		- Exploding
+			- (x) Howler.png
+		- Melee
+			- (x) Brawler.png
+			- (x) Speedster.png
+		- Ranged
+			- Straight shooter.png ![[Straight shooter.png]]
+			- (x) Rocket launcher.png
+			- (x) Shotgun.png
+	- Player
+		- Player.png ![[Player.png]]
+	- Structures
+		- Fence.png ![[Fence.png]]
+		- Tree.png ![[Tree.png]]
+		- (x) Bush.png
+		- (x) Gravestone.png
+		- (x) Rock.png
+	- Terrain
+		- Grass.png ![[Grass.png]]
+		- (x) Dirt.png
+		- (x) Grave soil.png
+		- (x) Stone path.png
+	- UI
+		- Health
+		- (x) Ammo
+		- (x) Currency
+		- (x) Pause Icon
+		- (x) Quit icon
+		- (x) Boss Bar
+		- (x) Timeline
+		- (x) Title Graphic
+		- (x) Buff icons
+		- (x) Weapon upgrade icons
+	- Weapons
+		- Melee
+			- (x) Haunted Shovel
+			- (x) Shovel
+			- (x) Twin Trowels
+		- Ranged
+			- Ecto Blaster
+				- Ecto Blaster.png ![[Ecto Blaster.png|16]]
+			- (x) Ecto Burster
+			- (x) Ecto Cannon
+			- (x) Ecto-no-more
